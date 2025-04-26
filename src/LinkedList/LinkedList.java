@@ -109,6 +109,18 @@ public class LinkedList {
         size--;
     }
 
+    public int[] toArray() {
+        var array = new int[size];
+        var index = 0;
+        var current = head;
+        while (current != null) {
+            array[index++] = current.value;
+            current = current.next;
+        }
+
+        return array;
+    }
+
     public int size() {
         return size;
     }

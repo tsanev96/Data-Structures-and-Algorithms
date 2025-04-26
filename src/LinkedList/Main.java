@@ -2,6 +2,8 @@ package LinkedList;
 
 import Arrays.Array;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         // linked lists consists of a group of nodes. Each hold two piece of data, one is a value,one is
@@ -48,11 +50,15 @@ public class Main {
         System.out.println(linkedList.indexOf(10));; // 0
         System.out.println(linkedList.size());
 
-        var emptyList = new LinkedList();
+        var list = new LinkedList();
 
-        emptyList.removeFirst(); // NoSuchElementException
-        emptyList.removeLast(); // NoSuchElementException
-        emptyList.addFirst(10);
-        System.out.println(emptyList.size());
+//        emptyList.removeFirst(); // NoSuchElementException
+//        emptyList.removeLast(); // NoSuchElementException
+        list.addFirst(10);
+        System.out.println(list.size());
+
+        var array = list.toArray();
+
+        System.out.println(Arrays.toString(array));
     }
 }
