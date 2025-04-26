@@ -34,11 +34,25 @@ public class Main {
         // Custom linked list
         var linkedList = new LinkedList();
 
-        linkedList.addLast(1);
-        linkedList.addLast(2);
-        linkedList.addLast(3);
         linkedList.addFirst(10);
+        linkedList.addLast(20);
+        linkedList.addLast(30);
+        linkedList.addFirst(1);
 
+        linkedList.removeFirst(); // [10, 20, 30]
+        linkedList.removeLast(); // [10, 20]
 
+        System.out.println(linkedList.contains(10));; // true
+        System.out.println(linkedList.contains(120));; // false
+        System.out.println(linkedList.indexOf(30));; // -1
+        System.out.println(linkedList.indexOf(10));; // 0
+        System.out.println(linkedList.size());
+
+        var emptyList = new LinkedList();
+
+        emptyList.removeFirst(); // NoSuchElementException
+        emptyList.removeLast(); // NoSuchElementException
+        emptyList.addFirst(10);
+        System.out.println(emptyList.size());
     }
 }
