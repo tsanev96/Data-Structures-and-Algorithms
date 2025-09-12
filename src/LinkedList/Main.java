@@ -6,6 +6,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        /*
+
         // linked lists consists of a group of nodes. Each hold two piece of data, one is a value,one is
         // the address of the next node in the list, that's why they are linked lists because there nodes are linked together
         // First node - HEAD, last - TAIL
@@ -60,5 +62,49 @@ public class Main {
         var array = list.toArray();
 
         System.out.println(Arrays.toString(array));
+         */
+
+        /*
+        var listToReverse = new LinkedList();
+
+        listToReverse.addLast(10);
+        listToReverse.addLast(20);
+        listToReverse.addLast(30);
+        listToReverse.addLast(40);
+
+        listToReverse.reverse();
+
+
+         */
+
+//        java.util.LinkedList<String> test = new java.util.LinkedList<>();
+//        test.removeFirst();
+        var list = new LinkedList();
+
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+        list.removeLast();
+
+//        list.addFirst(100000);
+        list.addLast(1222);
+
+        System.out.println(list.size());
+
+        /*
+                        Array         Linked Lists
+            Lookup
+                    by index  0(1)       0(n)
+                    by value  0(n)       0(n)
+            Insert
+                Beginning/End 0(n)      0(1)
+                Middle        0(n)      0(1)
+
+            Delete
+                Beginning     0(n)       0(1)
+                Middle        0(n)       0(n)
+                End           0(1)       0(n)
+         */
+
     }
 }
