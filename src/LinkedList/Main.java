@@ -84,13 +84,12 @@ public class Main {
         list.addLast(10);
         list.addLast(20);
         list.addLast(30);
-        list.removeLast();
 
 //        list.addFirst(100000);
-        list.addLast(1222);
 
-        System.out.println(list.size());
+        list.reverse();
 
+        System.out.println(Arrays.toString(list.toArray()));
         /*
                         Array         Linked Lists
             Lookup

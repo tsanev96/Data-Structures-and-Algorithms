@@ -40,7 +40,9 @@ public class LinkedList {
     private Node getPrevious(Node node) {
         var current = head;
         while (current != null) {
-            if (current.next == node)   return current;
+            if (current.next == node)   {
+                return current;
+            };
             current = current.next;
         }
         return null;
@@ -120,6 +122,32 @@ public class LinkedList {
 
         return array;
     }
+
+    // check todo
+    public void reverse() {
+        if (isEmpty()) return;
+        var previous = head; // 10
+        var current = previous.next; // 20
+        while (current != null) {
+            var next = current.next; // 30
+            current.next = previous; // 20 -> 10
+            previous = current; // 20
+            current = next; // 30 -> null
+        }
+
+        // last iteration
+        //              head
+        // [10 <- 20 <- 30]
+        //              p    c    n
+
+        // head still points to 10 (the old head)
+
+        tail = head;   // old head (10) becomes new tail
+        tail.next = null; // cut dangling link
+        head = previous;  // new head is 30
+    }
+
+
 
     public int size() {
         return size;
