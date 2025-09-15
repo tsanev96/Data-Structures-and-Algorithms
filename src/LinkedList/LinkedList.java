@@ -148,6 +148,34 @@ public class LinkedList {
     }
 
 
+    public int getKthFromTheEnd(int k) {
+        if (k <= 0) throw new IllegalArgumentException();
+        if (isEmpty()) throw new IllegalStateException();
+
+        if (k == 1) return tail.value;
+
+        var first = head;
+        var second = head;
+        for (var i = 0; i < k - 1; i++) {
+            second = second.next;
+            if (second == null) throw new IllegalArgumentException();
+        }
+
+        while (second != tail) {
+            first = first.next;
+            second = second.next;
+        }
+
+        return first.value;
+        // Solution 2: when u know the size
+//        Node current = head;
+//        int steps = size - k; // steps to reach the target from start
+//        for (int i = 0; i < steps; i++) {
+//            current = current.next;
+//        }
+//        return current.value;
+    }
+
 
     public int size() {
         return size;

@@ -84,12 +84,16 @@ public class Main {
         list.addLast(10);
         list.addLast(20);
         list.addLast(30);
+        list.addLast(40);
+        list.addLast(50);
+        list.addLast(60);
 
 //        list.addFirst(100000);
 
-        list.reverse();
 
-        System.out.println(Arrays.toString(list.toArray()));
+        // 10 20 30 40 50 60
+        System.out.println( "Result: " + list.getKthFromTheEnd(7));
+
         /*
                         Array         Linked Lists
             Lookup
