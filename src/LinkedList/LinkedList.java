@@ -176,6 +176,42 @@ public class LinkedList {
 //        return current.value;
     }
 
+    /** Assume that you don’t know the size of the list ahead of time */
+    public void findMiddle() {
+        // odd, next is null before the last move of the points
+        // even, next is not null
+
+        if (isEmpty()) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        if (head == tail) {
+            System.out.println("Middle element: " + head.value);
+            return;
+        }
+
+        // Floyd's cycle finding algorithm
+       var slow = head;
+       var fast = head;
+       var previous = head;
+
+       while (fast != null) {
+           if (fast.next == null) break;
+           previous = slow;
+           slow = slow.next;
+           fast = fast.next.next;
+       }
+
+       var isOdd = fast != null;
+
+       if (isOdd) {
+           System.out.println("Middle element: " + slow.value);
+       } else {
+           System.out.println("Middle elements: " + previous.value + ", " + slow.value);
+       }
+
+    }
 
     public int size() {
         return size;

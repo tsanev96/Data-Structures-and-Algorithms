@@ -91,8 +91,8 @@ public class Main {
 //        list.addFirst(100000);
 
 
-        // 10 20 30 40 50 60
-        System.out.println( "Result: " + list.getKthFromTheEnd(7));
+        list.findMiddle();
+
 
         /*
                         Array         Linked Lists
